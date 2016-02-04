@@ -106,39 +106,7 @@ void setup() {
   Serial.println(F("Access Control v3.3"));   // For debugging purposes
   ShowReaderDetails();  // Show details of PCD - MFRC522 Card Reader details
 
-  //Wipe Code if Button Pressed while setup run (powered on) it wipes EEPROM
-//  if (digitalRead(wipeB) == LOW) {  // when button pressed pin should get low, button connected to ground
-//    digitalWrite(redLed, LED_ON); // Red Led stays on to inform user we are going to wipe
-//    Serial.println(F("Wipe Button Pressed"));
-//    Serial.println(F("You have 5 seconds to Cancel"));
-//    Serial.println(F("This will be remove all records and cannot be undone"));
-//    delay(5000);                        // Give user enough time to cancel operation
-//    if (digitalRead(wipeB) == LOW) {    // If button still be pressed, wipe EEPROM
-//      Serial.println(F("Starting Wiping EEPROM"));
-//      for (int x = 0; x < EEPROM.length(); x = x + 1) {    //Loop end of EEPROM address
-//        if (EEPROM.read(x) == 0) {              //If EEPROM address 0
-//          // do nothing, already clear, go to the next address in order to save time and reduce writes to EEPROM
-//        }
-//        else {
-//          EEPROM.write(x, 0);       // if not write 0 to clear, it takes 3.3mS
-//        }
-//      }
-//      Serial.println(F("EEPROM Successfully Wiped"));
-//      digitalWrite(redLed, LED_OFF);  // visualize successful wipe
-//      delay(200);
-//      digitalWrite(redLed, LED_ON);
-//      delay(200);
-//      digitalWrite(redLed, LED_OFF);
-//      delay(200);
-//      digitalWrite(redLed, LED_ON);
-//      delay(200);
-//      digitalWrite(redLed, LED_OFF);
-//    }
-//    else {
-//      Serial.println(F("Wiping Cancelled"));
-//      digitalWrite(redLed, LED_OFF);
-//    }
-//  }
+  
   // Check if master card defined, if not let user choose a master card
   // This also useful to just redefine Master Card
   // You can keep other EEPROM records just write other than 143 to EEPROM address 1
